@@ -78,3 +78,141 @@ header p {
   border-top: 1px solid #222;
   background: linear-gradient(180deg, #151515 0%, #111 100%);
 }
+
+/* Shader Detail View */
+.shader-detail {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.detail-header {
+  max-width: 1400px;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.detail-header h1 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #888;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.back-button:hover {
+  background: #222;
+  border-color: #444;
+  color: #fff;
+}
+
+.detail-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .detail-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.preview-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.preview-canvas {
+  aspect-ratio: 1;
+  background: #111;
+  border-radius: 12px;
+  border: 1px solid #222;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.preview-canvas:active {
+  cursor: grabbing;
+}
+
+.preview-hint {
+  text-align: center;
+  color: #555;
+  font-size: 0.8rem;
+}
+
+.code-section {
+  display: flex;
+  flex-direction: column;
+  background: #111;
+  border-radius: 12px;
+  border: 1px solid #222;
+  overflow: hidden;
+  max-height: 70vh;
+}
+
+.code-tabs {
+  display: flex;
+  border-bottom: 1px solid #222;
+}
+
+.code-tab {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  background: transparent;
+  border: none;
+  color: #666;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.code-tab:hover {
+  color: #999;
+  background: #1a1a1a;
+}
+
+.code-tab.active {
+  color: #fff;
+  background: #1a1a1a;
+  border-bottom: 2px solid #667eea;
+}
+
+.code-content {
+  flex: 1;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.code-content pre {
+  margin: 0;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.code-content code {
+  color: #e0e0e0;
+  white-space: pre;
+}

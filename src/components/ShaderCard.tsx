@@ -6,6 +6,7 @@ import type { ShaderConfig } from '../shaders'
 
 interface ShaderCardProps {
   shader: ShaderConfig
+  onClick?: () => void
 }
 
 function Sphere({ shader }: { shader: ShaderConfig }) {
@@ -51,9 +52,9 @@ function Sphere({ shader }: { shader: ShaderConfig }) {
   )
 }
 
-export function ShaderCard({ shader }: ShaderCardProps) {
+export function ShaderCard({ shader, onClick }: ShaderCardProps) {
   return (
-    <div className="shader-card">
+    <div className="shader-card" onClick={onClick} style={{ cursor: onClick ? 'pointer' : undefined }}>
       <div className="canvas-container">
         <Canvas
           camera={{ position: [0, 0, 3], fov: 50 }}
