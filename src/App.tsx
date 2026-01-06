@@ -1,26 +1,19 @@
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
-import { Gallery } from './components/Gallery'
+import { ShaderCard } from './components/ShaderCard'
+import { shaders } from './shaders'
 
 function App() {
   return (
-    <Canvas
-      camera={{ position: [0, 0, 10], fov: 50 }}
-      gl={{ antialias: true }}
-    >
-      <color attach="background" args={['#0a0a0a']} />
-      <ambientLight intensity={0.5} />
-      <pointLight position={[10, 10, 10]} intensity={1} />
-      <pointLight position={[-10, -10, -10]} intensity={0.5} />
-      <Gallery />
-      <OrbitControls
-        enablePan={true}
-        enableZoom={true}
-        enableRotate={true}
-        minDistance={5}
-        maxDistance={20}
-      />
-    </Canvas>
+    <div className="app">
+      <header>
+        <h1>Shader Collection</h1>
+        <p>Drag to rotate each sphere</p>
+      </header>
+      <div className="gallery">
+        {shaders.map((shader) => (
+          <ShaderCard key={shader.name} shader={shader} />
+        ))}
+      </div>
+    </div>
   )
 }
 
