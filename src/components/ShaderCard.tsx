@@ -1,6 +1,5 @@
 import { useRef, useMemo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 import type { ShaderConfig } from '../shaders'
 
@@ -35,6 +34,10 @@ function Sphere({ shader }: { shader: ShaderConfig }) {
     if (uniforms.uTime) {
       uniforms.uTime.value = state.clock.elapsedTime
     }
+    // Auto-rotate the mesh
+    if (meshRef.current) {
+      meshRef.current.rotation.y = state.clock.elapsedTime * 0.5
+    }
   })
 
   const isTransparent = shader.transparent === true
@@ -64,13 +67,6 @@ export function ShaderCard({ shader, onClick }: ShaderCardProps) {
           <pointLight position={[5, 5, 5]} intensity={1} />
           <pointLight position={[-5, -5, -5]} intensity={0.3} />
           <Sphere shader={shader} />
-          <OrbitControls
-            enablePan={false}
-            enableZoom={false}
-            enableRotate={false}
-            autoRotate
-            autoRotateSpeed={1}
-          />
         </Canvas>
       </div>
       <div className="shader-name">{shader.name}</div>

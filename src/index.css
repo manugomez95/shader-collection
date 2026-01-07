@@ -64,7 +64,6 @@ header p {
 .canvas-container {
   aspect-ratio: 1;
   touch-action: pan-y;
-  pointer-events: none;
 }
 
 .shader-name {

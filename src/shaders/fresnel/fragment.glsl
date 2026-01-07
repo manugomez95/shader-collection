@@ -1,3 +1,5 @@
+precision highp float;
+
 uniform float uTime;
 uniform vec3 uColor;
 uniform vec3 uFresnelColor;
