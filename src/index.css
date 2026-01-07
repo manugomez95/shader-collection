@@ -52,6 +52,7 @@ header p {
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
   border: 1px solid #222;
+  cursor: pointer;
 }
 
 .shader-card:hover {
@@ -62,11 +63,8 @@ header p {
 
 .canvas-container {
   aspect-ratio: 1;
-  cursor: grab;
-}
-
-.canvas-container:active {
-  cursor: grabbing;
+  touch-action: pan-y;
+  pointer-events: none;
 }
 
 .shader-name {
