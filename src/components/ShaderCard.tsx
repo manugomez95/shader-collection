@@ -54,7 +54,7 @@ function Sphere({ shader }: { shader: ShaderConfig }) {
 
 export function ShaderCard({ shader, onClick }: ShaderCardProps) {
   return (
-    <div className="shader-card" onClick={onClick} style={{ cursor: onClick ? 'pointer' : undefined }}>
+    <div className="shader-card" onClick={onClick}>
       <div className="canvas-container">
         <Canvas
           camera={{ position: [0, 0, 3], fov: 50 }}
@@ -67,7 +67,7 @@ export function ShaderCard({ shader, onClick }: ShaderCardProps) {
           <OrbitControls
             enablePan={false}
             enableZoom={false}
-            enableRotate={true}
+            enableRotate={false}
             autoRotate
             autoRotateSpeed={1}
           />
