@@ -8,6 +8,7 @@ export { voronoi } from './voronoi'
 export { fractal } from './fractal'
 export { plasma } from './plasma'
 export { marble } from './marble'
+export { rainwindow } from './rainwindow'
 
 import { fresnel } from './fresnel'
 import { toon } from './toon'
@@ -19,6 +20,7 @@ import { voronoi } from './voronoi'
 import { fractal } from './fractal'
 import { plasma } from './plasma'
 import { marble } from './marble'
+import { rainwindow } from './rainwindow'
 
 export interface ShaderConfig {
   name: string
@@ -39,4 +41,5 @@ export const shaders: ShaderConfig[] = [
   fractal,
   plasma,
   marble,
+  rainwindow,
 ]
